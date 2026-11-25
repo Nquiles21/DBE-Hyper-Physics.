@@ -33,8 +33,8 @@ public abstract class SpringPhysicsMixin {
         }
 
         int level = HyperPhysicsConfig.INTENSITY.get();
-        // Level 1 = 1x range; level 5 = 3x range.
-        float intensityScale = 1.0F + (level - 1) * 0.50F;
+        // Level 1 = 4x range; level 5 = 12x range (300% stronger than the previous 3x extreme preset).
+        float intensityScale = (1.0F + (level - 1) * 0.50F) * 4.0F;
         float response = HyperPhysicsConfig.MOVEMENT_RESPONSE.get().floatValue();
         // Lower settling values retain more spring velocity and reduce friction.
         float settling = HyperPhysicsConfig.DAMPING.get().floatValue();
