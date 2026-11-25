@@ -16,14 +16,14 @@ public final class HyperPhysicsConfig {
                 .comment("Master switch for experimental DBE physics integration.")
                 .define("enabled", true);
         INTENSITY = BUILDER
-                .comment("Requested physics intensity, from 1 (subtle) to 5 (strong).")
-                .defineInRange("intensity", 4, 1, 5);
+                .comment("Physics range multiplier, from 1 (normal) to 5 (extreme).")
+                .defineInRange("intensity", 5, 1, 5);
         MOVEMENT_RESPONSE = BUILDER
-                .comment("Movement response multiplier.")
-                .defineInRange("movementResponse", 1.0D, 0.1D, 2.5D);
+                .comment("Spring stiffness and movement response multiplier.")
+                .defineInRange("movementResponse", 2.8D, 0.1D, 3.5D);
         DAMPING = BUILDER
-                .comment("Damping multiplier. Higher values settle motion faster.")
-                .defineInRange("damping", 1.0D, 0.1D, 3.0D);
+                .comment("Velocity retention control: lower values mean longer bounce and less friction.")
+                .defineInRange("damping", 0.35D, 0.1D, 1.5D);
         BUILDER.pop();
     }
 
